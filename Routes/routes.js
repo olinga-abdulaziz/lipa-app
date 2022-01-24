@@ -6,7 +6,7 @@ dotenv.config({path:'./config/config.env'})
 const { token , stkpush } = require('../Controllers/mpesaController')
 
 router.get('/',(req,res)=>{
-    res.send('first page')
+    res.render('index')
 })
 
 router.get('/mpesa',token,stkpush)
