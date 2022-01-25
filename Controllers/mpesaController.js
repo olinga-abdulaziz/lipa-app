@@ -56,7 +56,7 @@ exports.stkpush=(req,res) =>{
         "PartyA":"254769210601",    
         "PartyB":"174379",    
         "PhoneNumber":"254769210601",    
-        "CallBackURL":"https://196.201.213.114/callback",    
+        "CallBackURL":"http://lipaapp.herokuapp.com/callback",    
         "AccountReference":"Abdula acc",    
         "TransactionDesc":"Lipanampesa"
     }
