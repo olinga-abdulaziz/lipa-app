@@ -11,7 +11,7 @@ router.post('/callback',(req,res)=>{
     res.send(req.body)
 })
 
-router.get('lipa',(req,res)=>{
+router.get('/lipa',(req,res)=>{
     res.send('this was accured successfully thank you')
 })
 
