@@ -1,18 +1,31 @@
 const express=require('express')
-const router=require('./Routes/routes')
-const mpesa=require('./Routes/mpesa')
+const Member=require('./Routes/MembersRoutes')
+const Group=require('./Routes/GroupRoute')
 const dotenv=require('dotenv')
+const mongodb=require('./db/mongoDB')
+const bodyParser=require('body-parser')
 const ejs=require('ejs')
+const cors=require('cors')
 
 const app=express()
 
-dotenv.config({path:'./config/config.env'})
+app.use(cors())
+dotenv.config()
+
+app.use(cors())
+app.use(bodyParser.urlencoded({extended:true}))
+app.use(bodyParser.json())
+
+mongodb()
+
+
 
 app.set('view engine','ejs')
 app.set('views','./views')
 
-app.use('/',router)
-app.use('/mpesa',mpesa)
+app.use('/',Member)
+app.use('/group',Group)
+
 
 
 const port=process.env.PORT || 8080
